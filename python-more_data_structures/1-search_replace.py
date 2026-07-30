@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 def search_replace(my_list, search, replace):
-    return [replace if val == search else val for val in my_list]
+    """Returns a new list with all occurrences of search replaced."""
+    return [replace if element == search else element for element in my_list]

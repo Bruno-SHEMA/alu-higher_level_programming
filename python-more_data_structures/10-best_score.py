@@ -1,5 +1,15 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    if not a_dictionary:
+    """Returns the key with the biggest integer value."""
+    if a_dictionary is None or len(a_dictionary) == 0:
         return None
-    return max(a_dictionary, key=a_dictionary.get)
+
+    best_key = None
+    best_value = 0
+
+    for key, value in a_dictionary.items():
+        if best_key is None or value > best_value:
+            best_key = key
+            best_value = value
+
+    return best_key

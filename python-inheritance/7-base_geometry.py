@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Module that defines the BaseGeometry class with integer_validator."""
+"""BaseGeometry module."""
 
 
 class BaseGeometry:
-    """Base geometry class."""
+    """BaseGeometry class."""
 
     def area(self):
-        """Raise an Exception since area() is not implemented."""
+        """Raises an exception because area is not implemented."""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):

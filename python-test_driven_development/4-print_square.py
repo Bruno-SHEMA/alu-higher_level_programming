@@ -1,17 +1,38 @@
-#!/usr/bin/python3
-"""Module that prints a square using the character #."""
+=============================
+Tests for 4-print_square.py
+=============================
 
+Import function:
+    >>> print_square = __import__('4-print_square').print_square
 
-def print_square(size):
-    """Print a square of size x size using the character #.
+Basic printing:
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+    >>> print_square(1)
+    #
+    >>> print_square(0)
 
-    Args:
-        size: the length of the square's side, must be a
-            non-negative integer.
-    """
-    if not isinstance(size, int):
-        raise TypeError("size must be an integer")
-    if size < 0:
-        raise ValueError("size must be >= 0")
-    for i in range(size):
-        print("#" * size)
+Missing argument:
+    >>> print_square()
+    Traceback (most recent call last):
+        ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+Errors:
+    >>> print_square(-1)
+    Traceback (most recent call last):
+        ...
+    ValueError: size must be >= 0
+
+    >>> print_square("4")
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+    >>> print_square(-1.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer

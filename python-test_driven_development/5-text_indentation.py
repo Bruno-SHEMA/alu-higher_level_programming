@@ -1,24 +1,32 @@
 #!/usr/bin/python3
-"""Module that prints text with indentation after ., ? and :."""
+"""
+This module provides a function to format text based on delimiters.
+"""
 
 
 def text_indentation(text):
-    """Print text with two new lines after each ., ? and : character.
+    """Prints text with 2 new lines after each '.', '?', and ':'.
 
     Args:
-        text: the string to print, must be a string.
+        text: String to be printed.
+
+    Raises:
+        TypeError: If text is not a string.
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    text = text.strip()
-    i = 0
-    while i < len(text):
-        if text[i] in ".?:":
-            print(text[i], end="\n\n")
-            i += 1
-            while i < len(text) and text[i] == " ":
-                i += 1
-        else:
-            print(text[i], end="")
-            i += 1
+    c = 0
+    while c < len(text) and text[c] == ' ':
+        c += 1
+
+    while c < len(text):
+        print(text[c], end="")
+        if text[c] == "\n" or text[c] in ".?:":
+            if text[c] in ".?:":
+                print("\n")
+            c += 1
+            while c < len(text) and text[c] == ' ':
+                c += 1
+            continue
+        c += 1

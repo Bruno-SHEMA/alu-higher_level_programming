@@ -1,38 +1,25 @@
-=============================
-Tests for 4-print_square.py
-=============================
+#!/usr/bin/python3
+"""
+This module provides a function that prints a square with character '#'.
+"""
 
-Import function:
-    >>> print_square = __import__('4-print_square').print_square
 
-Basic printing:
-    >>> print_square(4)
-    ####
-    ####
-    ####
-    ####
-    >>> print_square(1)
-    #
-    >>> print_square(0)
+def print_square(size):
+    """Prints a square with the '#' character.
 
-Missing argument:
-    >>> print_square()
-    Traceback (most recent call last):
-        ...
-    TypeError: print_square() missing 1 required positional argument: 'size'
+    Args:
+        size: The side length of the square.
 
-Errors:
-    >>> print_square(-1)
-    Traceback (most recent call last):
-        ...
-    ValueError: size must be >= 0
+    Raises:
+        TypeError: If size is not an integer.
+        ValueError: If size is less than 0.
+    """
+    if isinstance(size, float) and size < 0:
+        raise TypeError("size must be an integer")
+    if not isinstance(size, int):
+        raise TypeError("size must be an integer")
+    if size < 0:
+        raise ValueError("size must be >= 0")
 
-    >>> print_square("4")
-    Traceback (most recent call last):
-        ...
-    TypeError: size must be an integer
-
-    >>> print_square(-1.5)
-    Traceback (most recent call last):
-        ...
-    TypeError: size must be an integer
+    for _ in range(size):
+        print("#" * size)

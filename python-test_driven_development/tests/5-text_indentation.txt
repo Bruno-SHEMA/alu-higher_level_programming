@@ -1,21 +1,28 @@
-The ``5-text_indentation`` module
-====================================
+=============================
+Tests for 5-text_indentation.py
+=============================
 
-Using ``text_indentation``
------------------------------
-
+Import function:
     >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-    >>> text_indentation("Hello world. How are you? Fine: thanks.")
-    Hello world.
+Basic formatting:
+    >>> text_indentation("Hello. World? Testing: Done")
+    Hello.
     <BLANKLINE>
-    How are you?
+    World?
     <BLANKLINE>
-    Fine:
+    Testing:
     <BLANKLINE>
-    thanks.
-    <BLANKLINE>
+    Done
 
-    >>> text_indentation(89)
+Missing argument:
+    >>> text_indentation()
     Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Type Errors:
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
     TypeError: text must be a string

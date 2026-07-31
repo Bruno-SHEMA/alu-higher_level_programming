@@ -11,7 +11,6 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """Validate that value is a positive integer."""
-        # Reject booleans explicitly (since bool is a subclass of int in Python)
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:

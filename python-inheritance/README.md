@@ -32,6 +32,4 @@ This project covers Object-Oriented Programming in Python, focusing on inheritan
 | `10-square.py` | `Square` class that inherits from `Rectangle` |
 | `11-square.py` | `Square` class with `__str__` |
 
-## Author
 
-Chouu - ALU Higher Level Programming

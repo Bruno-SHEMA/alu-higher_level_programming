@@ -1,4 +1,3 @@
-
 #!/usr/bin/node
 const languages = [
   'C is fun',

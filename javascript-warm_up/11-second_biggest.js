@@ -1,9 +1,13 @@
 #!/usr/bin/node
-const numbers = process.argv.slice(2).map(Number);
+const args = process.argv.slice(2).map(Number);
 
-if (numbers.length < 2) {
+if (args.length < 2) {
   console.log(0);
 } else {
-  numbers.sort((a, b) => b - a);
-  console.log(numbers[1]);
+  const uniqueSorted = [...new Set(args)].sort((a, b) => b - a);
+  if (uniqueSorted.length < 2) {
+    console.log(0);
+  } else {
+    console.log(uniqueSorted[1]);
+  }
 }
